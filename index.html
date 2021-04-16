@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="stílus.css">
+</head>
+
+<body>
+    
+    <label for="nev">A neve:</label>
+    <input id="nev" type="text">
+    <label for="hozzaszolas">Hozzászólás:</label>
+    <textarea name="" id="hozzaszolas" cols="100" rows="5"></textarea>
+    <button onclick="felvesz()">HOZZASZOL</button>
+    <div id="kimenet"></div>
+    <script>
+        var tomb = [];
+        var ki = document.getElementById("kimenet");
+        function Hszol(nev,hozzaszolas,ido){
+            this.nev=nev;
+            this.hozzaszolas=hozzaszolas;
+            this.ido=ido;
+        }
+        function felvesz(){
+            var nev = document.getElementById("nev");
+            var hozzaszolas = document.getElementById("hozzaszolas");
+            var idopont = new Date();
+            hszol= new Hszol(nev.value,hozzaszolas.value,idopont.toLocaleString());
+            nev.value="";
+            hozzaszolas.value="";
+            tomb.push(hszol);
+            megvalosit();
+        }
+        function megvalosit(){
+            ki.innerHTML="";
+            for (var i=0; i<tomb.length;i++){
+                var hszol = tomb[i];
+                ki.innerHTML+="<p>"+hszol.nev+" : "+hszol.ido+"</p><p>"+hszol.hozzaszolas+"</p>";
+            }
+        }
+        megvalosit();
+    </script>
+    <header>
+        <h1 id="focim">Covid-19 mint vírus</h1>
+        <nav class="container navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-nav">
+                <a id="szin" class="nav-link"
+                    href="https://koronavirus.gov.hu/cikkek/megkezdodott-az-oltas-az-orosz-vakcinaval">Orosz vakcina</a>
+                <a id="szinketto" class="nav-link"
+                    href="https://www.egeszsegkalauz.hu/betegsegek/fertozo-betegsegek/ezek-az-astrazeneca-vakcina-mellekhatasai/b1bwtkn">Svéd
+                    vakcina</a>
+                <a id="szinharom" class="nav-link"
+                    href="https://www.egeszsegkalauz.hu/betegsegek/fertozo-betegsegek/koronavirus-ezt-jo-ha-tudja-a-kinai-vakcinarol/6csjf1v">Kínai
+                    vakcina</a>
+                <a id="szinnegy" class="nav-link" href="https://hu.wikipedia.org/wiki/Koronav%C3%ADrus"
+                    target="_blank">És a többi</a>
+            </div>
+
+    </header>
+
+    <main class="container">
+        <article class="row">
+            <div class="col-12">
+                <h1 class="szelre">Covid-19 járvány és a szövődményei</h1>
+                <h2>Neurológiai szövődményei</h2>
+                <ul id="virus">
+                    <li> <a href="https://www.neurologiaikozpont.hu/fejfajas-okai-kezelese" target="_blank">Fejfájás</a>
+                        tenziós fejfájás</li>
+                    <li> <a
+                            href="https://www.fulorrgegekozpont.hu/hirek/szaglasvesztes-is-lehet-a-koronavirus-fertozes-tunete">Íz-
+                            és szaglásvesztés</a> </li>
+                    <li><a
+                            href="https://benu.hu/cikk/6-eset-amikor-az-izomfajdalom-rossz-elojel-lehet/">Izomfájdalom</a>
+                    </li>
+                    <li>Szédülés</li>
+                    <li> <a href="https://www.webbeteg.hu/cikkek/neurologia/19150/a-hirtelen-kialakulo-zavartsag-okai"
+                            target="_blank">Zavarodottság</a>, tudatzavar</li>
+                </ul>
+                <div>
+                    A COVID fertőzés egészen változatos neurológiai tüneteket okozhat. A Cerebrovaszkuláris kórképektől
+                    kezdve (amikor az agy vérellátását hirtelen megzavarja valami - például vérrög, embólia vagy súlyos
+                    érszűkület, ami a mentális állapot változásával is járhat), egészen a perifériás - tehát a
+                    végtagokban jelentkező panaszokig. Ezek jó része nem csak heveny szakban okoz panaszokat, hanem
+                    hosszútávú maradványtünetekkel is számolni kell.
+                </div>
+                <h2>Kardiológiai szövődményei</h2>
+                <div>A koronavírus fertőzésből felépültek közül egyre többen számolnak be hosszan tartó, szövődmények
+                    okozta tünetekről. Ezek egyike lehet a szív károsodása a fertőzés vagy a kialakuló tüdőgyulladás
+                    következtében.</div>
+                <h2>Covid-19 főbb tünetei</h2>
+                <ol>
+                    <li>láz</li>
+                    <li>fáradékonyság és gyengeség</li>
+                    <li>légzési nehézségek</li>
+                    <li>légszomj</li>
+                    <li>százaz köhögés</li>
+                    <li>hasmenés</li>
+                    <li>nyomásérzés, fájdalom a mellkasban</li>
+                    <li>fejfájás</li>
+                    <li>étvágytalanság</li>
+                    <li> <a href="https://www.neurologiaikozpont.hu/beszedzavar-stroke-okai">beszédképtelenség</a>,
+                        mozgásképtelenség</li>
+                    <li>torokfájás</li>
+                    <li>orrfolyás</li>
+                    <li> <a
+                            href="https://www.egeszsegkalauz.hu/betegsegek/fertozo-betegsegek/koronavirus-tunete-igy-jelzi-a-szem-hogy-baj-van/lkbpg89">kötőhártya-gyulladás</a>
+                    </li>
+                    <li>fájdalomérzet</li>
+                    <li>szaglás ízlelés elvesztése</li>
+                    <li> <a href="https://www.webbeteg.hu/cikkek/borbetegsegek/25139/covid-19-es-labujjak"
+                            target="_blank">bőrkiütés</a>
+                        vagy elszínesedés a lábujjjakon</li>
+                    <li>repedezett száraz ajkak</li>
+                    <li> <a
+                            href="https://www.webbeteg.hu/cikkek/fertozo_betegseg/26793/fulzugas-es-hosszu-covid">fülzúgás</a>
+                    </li>
+                    <li>nyelvfájdalom</li>
+                    <li>herpesz</li>
+                    <li>véletlenszerű anyagok, melyet nehezebb megérezni</li>
+                    <li>a látómezőben lebegő foltok</li>
+                    <li>ájulás, kollapszus</li>
+                    <li>nyelven szájüregen megjelenő kiütések</li>
+                    <li>szédülés</li>
+                    <li> <a href="https://www.fuldugo.hu/hirek/aktualis/covid-19-es-hallaskarosodas-amit-eddig-tudunk"
+                            target="_blank">hallásvesztés</a>
+                    </li>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Covid-19 az országunkban</h2>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <img src="kepek/kep.jpg" alt="" class="img-fluid img-thumbnail">
+                    <h3>Covid-19 és a vásárlás</h3>
+                    <p>A koronavírus-járvány miatt bevezetett társadalmi távolságtartás minden vonatkozásban, így az
+                        élelmiszer-vásárlási szokások terén is jelentős változást hozott. Annak ellenére, hogy a
+                        legtöbben a bolti vásárlást választják, a fogyasztók több mint harmada (35%-a) online vásárol
+                        élelmiszert, és ezen vásárlók 86%-a gondolja úgy, hogy a korlátozó rendelkezések megszűnése után
+                        is megtartja ezt a szokását. </p>
+
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <img src="kepek/koronavírus.jpg" alt="" class="img-fluid img-thumbnail">
+                    <h3>Covid-19 és a kiberbűnözés</h3>
+                    <p>A csaló levelek jellemzően többféle hamis hírrel keltenek figyelmet, például a vírus
+                        ellenszerével
+                        kapcsolatos nagy áttörésről, alternatív gyógymódokról, egészségügyi eszközök hiányáról és
+                        beszerzésének lehetőségeiről, fontos biztonsági intézkedésekről számolnak be, vagy azzal
+                        igyekeznek
+                        pánikot kelteni, hogy a vírus az adott településen is felütötte a fejét.</p>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <img src="kepek/covid-19.jpg" alt="" class="img-fluid img-thumbnail">
+                    <h3>A Covid-19</h3>
+                    <p>A feltételezések szerint az eredetileg csak állatok közt terjedő (SARS-CoV-2 nevű) vírusfertőzés
+                        valahogyan átlépte a fajok közti korlátokat és emberre is átterjedt. A vírus tényleges
+                        eredete jelenleg ismeretlen, de a 2019 decemberi esetek megjelenése óta úgy tűnik, főként csak
+                        emberről emberre terjed.</p>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <img src="kepek/covid-19szures.jpg" alt="" class="img-fluid img-thumbnail">
+                    <h3>Covid-19 szűrés és az ára</h3>
+                    <p>Minden vírusfertőzés után beindul a szervezet védekezőrendszere, először az IgM, majd az IgG
+                        típusú ellenanyagok mutathatók ki tehát a kórokozó valamelyik specifikus strukturális fehérjéje
+                        ellen termelt ellenanyagot mutatja ki.</p>
+                    <p> <u>COVID-19 PCR teszt:</u> 19 500 Ft</p>
+                    <p> <u>COVID ellenanyagszint meghatározás:</u> 11 000Ft</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Covid-19 ellen kifejlesztett vakcinák</h2>
+                </div>
+                <div class="col-12">
+                    <div class="col-sm-12 col-lg-12">
+                        <h3>Sinopharm</h3>
+                        <img src="kepek/sinopharm.jpg" alt="kínai-vakcina" class="img-fluid img-thumbnail">
+
+                    </div>
+                    <span>Sinopharm koronavírus vakcina összetétele Inaktivált SARS-CoV-2 (Vero Cell) vakcina
+                        alumínium-hidroxid adjuvánssal. Hogyan véd a vakcina? A vakcina elősegíti, hogy az immunrendszer
+                        (a szervezet természetes védelme) antitesteket és a vírus ellen ható vérsejteket termeljen, így
+                        nyújtson védelmet a COVID 19 ellen. A Sinopharm-vakcina 18 éves és idősebb személyeknél
+                        alkalmazható. Az oltóanyag megbetegedést nem okozhat. A szövődményekkel járó illetve súlyos
+                        lefolyású halállal végződő betegség kialakulása ellen nyújt védelmet. A védettség kialakulásához
+                        2 adag, 21-28 nap időközzel történő beadása szükséges. Magyarországon
+                        28 nap különbséget tartunk a 2 oltás beadása között.</span>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <img src="kepek/astrazeneca.jpg" alt="angol-svéd-vakcina" class="img-fluid img-thumbnail">
+
+                    <h3>AstraZeneca</h3>
+                    <p> A vakcina használatát hivatalosan engedélyezték <strong>2021. februárjában</strong>.
+                        Az AstraZeneca a Moderna a Pfizer vakcinájával ellentétben nem mRNS-vakcina, hanem
+                        vektorvakcina,
+                        aminek a lényege, hogy a koronavírus tüskefehérjéjét kódoló gént egy módosított, szaporodásra
+                        nem képes vírusba, azaz vektorvírusba ültetve juttatják be a szervezetünkbe. Az immunrendszerünk
+                        fellép a vektorvírus ellen, vagyis immunválaszt vált ki.</p>
+
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <img src="kepek/moderna.jpg" alt="amerikai-vakcina" class="img-fluid img-thumbnail">
+                    <h3>Moderna</h3>
+                    <p> <strong>2020. december 18-án</strong> megadta az engedélyt az mRNA-1273 sürgősségi
+                        felhasználására
+                        az Egyesült
+                        Államok gyógyszerügynöksége. az EU-ban elsőként történt jóváhagyását <strong>2021. 01.
+                            01-én</strong>
+                        követte a Moderna mRNA-1273 vakcinájának engedélyezése. Az engedélyezési eljárás és annak
+                        pozitív eredménye érvényes minden uniós országra (plusz Izlandra, Liechtensteinre és
+                        Norvégiára), így Magyarországra is. A Moderna technológiai platformja szintetikus, módosított
+                        nukleozidot
+                        tartalmazó mRNS-t (modRNS)
+                        épít be az emberi sejtekbe. Ez az mRNS ezután újraprogramozza a sejteket az immunválasz
+                        ösztönzése érdekében.</p>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <img src="kepek/pfiser.jpg" alt="német-vakcina" class="img-fluid img-thumbnail">
+                    <h3>Pfiser</h3>
+                    <p> <strong>2020. december 26-án</strong> megérkezett Magyarországra az első vakcinaszállítmány, az
+                        Európában elsőként
+                        engedélyezett Pfizer-BioNTech-vakcina. Ezzel a vakcinával kezdődött meg az egészségügyi dolgozók
+                        oltása.A Comirnaty 16 éves és idősebb személyeknél alkalmazható. A vakcina által biztosított
+                        védelem ideje még nem ismert, meghatározása folyamatban van a jelenleg zajló klinikai
+                        vizsgálatok során. A Pfizer-BioNTech COVID-19
+                        vakcina nem cserélhető fel más COVID-19 elleni oltóanyagokkal!!!</p>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <img src="kepek/sputnik.jpg" alt="orosz-vakcina" class="img-fluid img-thumbnail">
+                    <h3>Sputnik</h3>
+                    <p>A Szputnyik immár a negyedik Magyarországon alkalmazott vakcina a Pfizer, a Moderna és az
+                        AstraZeneca mellett. Miután az uniós vakcina-beszerzésből lassan és kevés vakcina érkezik,
+                        Magyarország 1 millió ember oltásához elég oltóanyag beszerzésére szerződött le Oroszországgal,
+                        amely három hónap alatt érkezhet meg. A magyar gyógyszerészeti hatóság <strong>2020. január
+                            20-án</strong>
+                        engedélyezte az orosz vakcinát. Ez a vakcinát is 18 év felett adható, ebből is két oltás
+                        szükséges 21 napos különbséggel. Oroszországban, Szerbinában is minden 18 év feletti
+                        korosztályban használják, a vajdasági magyarok is nagy számban oltakoznak ezzel a vakcinával.
+                    </p>
+                </div>
+        </article>
+        <h2 class="igazit">Akiknél fenn állhat a Covid-19 fertőzés kockázata!</h2>
+        <footer>
+            A Covid19-fertőzés kockázata mindenkinél fennáll, bizonyos csoportoknál azonban fokozott a súlyos lefolyású
+            betegség kialakulásának kockázata. Úgy tűnik, hogy a gyermekeknél kevésbé súlyosak a tünetek, mint a
+            felnőtteknél.
+            <h4>Így terjed a koronavírus gyorsabban</h4>
+            <footer>
+                A zsúfolt beltéri környezet lehetőséget teremt a Covid19 gyors terjedésére: a járvány kitöréséről többek
+                között börtönökben, migrációs befogadó központokban és élelmiszer-feldolgozó üzemekben számoltak be.
+                Lehetséges, hogy a hideg és párás levegő növeli a fertőzés kockázatát.
+            </footer>
+            <h4>Amilyen csoportokat könnyebben támad a covid-19</h4>
+            <article>
+                <div>
+                    <dt>Időskoruak:</dt>
+                </div>
+                <dd> <u>60 év felettiek!!!</u> </dd>
+                <div>
+                    <dt>Alapbetegséggel rendelkezőket:</dt>
+                </div>
+                <dd class="terjed">Például elhízásban, magas vérnyomásban, cukorbetegségben, szív- és érrendszeri
+                    betegségben, krónikus
+                    légzőszervi betegségben szenvedő, illetve legyengült immunrendszerű személyek.</dd>
+                <p> <a
+                        href="https://hvg.hu/itthon/20210405_Okos_vagy_vakmeroen_veszelyes_lepese_aprilis_19en_megnyitni_az_iskolakat">Részletek
+                        az enyhítésről:</a> </p>
+                <p class="text-left"> <a href="oltás.html" target="_blank" class="btn btn-outline-success">Az emberek
+                        listája és a beoltottak
+                        listája:</a> </p>
+        </footer>
+    </main>
+</body>
+
+</html>

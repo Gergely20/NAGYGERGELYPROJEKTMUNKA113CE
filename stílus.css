@@ -1,0 +1,133 @@
+body {
+    background-image: url(kepek/covid.jpg);
+    font-family: fantasy;
+    color: white;
+}
+li {
+    list-style-type: upper-roman;
+}
+#virus {
+    list-style-image: url(kepek/maszk.jpg);
+}
+#szin{
+    color: yellow;
+}
+#szinegy{
+    color: yellow;
+}
+#szinketto{
+    color: yellow;
+}
+#szinharom{
+    color: yellow;
+}
+#szinnegy{
+    color: yellow;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(0, 255, 34);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar {
+    background-color: #333
+}
+h1 {
+    text-align: center;
+}
+.szelre {
+    text-align: left;
+}
+h3 {
+    text-align: center;
+    font-size: 2.3rem;
+}
+input{
+    background-color: gold;
+    border: 6px dashed chocolate;
+    font-family: monospace;
+}
+label {
+    background-color: green;
+    font-style: italic;
+}
+strong{
+    color: fuchsia;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+}
+footer{
+    font-family: cursive;
+    color: blue;
+    background-image: url(kepek/virusszurese.jpg);
+}
+h4{
+    font-family: fantasy;
+    color: brown;
+}
+.igazit{
+    text-align: center;
+}
+#focim {
+    color: greenyellow;
+    font-size: 3.9rem;
+}
+h2{
+    border: 3px solid lightsalmon;
+    background-color: chartreuse;
+}
+dd{
+    color: red;
+    text-align: justify;
+    font-family: cursive;
+}
+dt{
+    font-family: fantasy;
+}
+.terjed{
+    color: black;
+    font-family: cursive;
+}
+.btn {
+    padding: 20px 50px;
+    color: purple;
+    font-size: xx-large;
+}
+.embereklista{
+    
+    float: left;
+    width:50%;
+    
+    border: 1px solid aqua;
+}
+.beoltottaklista{
+    
+    float: right;
+    width:50%;
+
+    border: 1px solid aqua;
+}
+.fent{
+    margin: 5px auto;
+    width: 60%;
+    display:flex;
+
+}
+.legteto{
+    width:60%;
+    border: 1px solid blue;
+    margin: 5px auto;
+}
+.emb{
+    font-size: xx-large;
+    padding: 2px;
+    font-weight: bold;
+}
+.beolt{
+    font-size: xx-large;
+    padding: 2px;
+    font-weight: bold;
+}
+

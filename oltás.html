@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oltás</title>
+    <script src="oltas.js"></script>
+    <link rel="stylesheet" href="stílus.css">
+</head>
+
+<body>
+    <div>
+        <label for="vkb">Van-e krónikus betegsége?</label>
+        <input type="radio" name="radio" onchange="szamit()" id="vkb">
+        <label for="eid">Egészségügyben, idősotthonban dolgozik?</label>
+        <input type="radio" name="radio" onchange="szamit()" id="eid">
+        <label for="il">Idősotthonban lakik?</label>
+        <input type="checkbox" name="" onchange="szamit()" id="il">
+        <label for="kemav">Korábban elkapta már a vírust?</label>
+        <input type="checkbox" name="" onchange="szamit()" id="kemav">
+    </div>
+    <div class="legteto">
+        <label for="nev">Név</label>
+        <input type="text" name="" id="nev">
+        <label for="kategoria">Kategória:</label>
+        <input type="text" name="" id="kategoria"><br>
+        <label for="szulev">Születési év:</label>
+        <input type="number" name="" id="szulev" value=0>
+        <label for="van">Be van e oltva:</label>
+        <input type="checkbox" name="" id="van" checked>
+        <button onclick="felvesz()">OK</button>
+        <p id="hiba"></p>
+    </div>
+    <div class="fent">
+        <div class="embereklista">
+            <h1 class="emb">Az emberek listája</h1>
+            <div id="kimenet"></div>
+        </div>
+        <div class="beoltottaklista">
+            <h1 class="beolt">A beoltott emberek listája</h1>
+            <div id="el"></div>
+        </div>
+    </div>
+    <div id="kimenet"></div>
+    <script>
+        var ki= document.getElementById("kimenet");
+        ki.innerHTML="";
+        function szamit(){
+            var nev = document.getElementById("nev").value;
+            var kateg = document.getElementById("kategoria").value;
+            var szulev = parseInt(document.getElementById("szulev").value);
+            if (vkb.checked) {
+                ki.innerHTML+=nev+" "+kateg+1+" "+szulev+" "+"<br>";
+                return 1;
+            }
+            if (eid.checked) {
+                ki.innerHTML+=nev+" "+kateg+2+" "+szulev+" "+"<br>";
+                return 2;
+            }
+            if (il.checked) {
+                ki.innerHTML+=nev+" "+kateg+3+" "+szulev+" "+"<br>";
+                return 3;
+            }
+            if (kemav.checked) {
+                ki.innerHTML+=nev+" "+kateg+4+" "+szulev+" "+"<br>";
+                return 4;
+            }
+            else {
+                return 5;
+            }
+        }
+    </script>
+</body>
+
+</html>
